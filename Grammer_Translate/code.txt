@@ -1,0 +1,21 @@
+源程序
+int a ;
+int b ;
+int c ;
+a = 2 ;
+b = 1 ;
+if ( a > b )
+c = a + b ;
+else
+c = a - b ;
+
+三地址代码
+100       a = 2
+101       b = 1
+102       if ( a > b ) goto 104
+103       goto 107
+104       t1 = a+b
+105       c = t1
+106       goto
+107       t2 = a-b
+108       c = t2

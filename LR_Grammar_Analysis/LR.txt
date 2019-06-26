@@ -1,0 +1,95 @@
+分析第1行:  int a ; 
+结果如下: 
+STACK        SYMBOL        INPUT        ACTION
+0             NULL         int a ;$        移入int       
+02            int          a ;$          按照L -> int | float 归约
+01             L             a ;$        移入id
+01            Lid           ;$          移入;
+01            D             $            按照D -> L id ; D | NULL 归约
+01             P             $           按照P -> D S 归约
+0               P               $             接受
+
+
+
+分析第2行:  int b ; 
+结果如下: 
+STACK        SYMBOL        INPUT        ACTION
+0             NULL         int b ;$        移入int       
+02            int          b ;$          按照L -> int | float 归约
+01             L             b ;$        移入id
+01            Lid           ;$          移入;
+01            D             $            按照D -> L id ; D | NULL 归约
+01             P             $           按照P -> D S 归约
+0               P               $             接受
+
+
+
+分析第3行:  int c ; 
+结果如下: 
+STACK        SYMBOL        INPUT        ACTION
+0             NULL         int c ;$        移入int       
+02            int          c ;$          按照L -> int | float 归约
+01             L             c ;$        移入id
+01            Lid           ;$          移入;
+01            D             $            按照D -> L id ; D | NULL 归约
+01             P             $           按照P -> D S 归约
+0               P               $             接受
+
+
+
+分析第4行:  a = 2 ; 
+结果如下: 
+STACK        SYMBOL        INPUT        ACTION
+0             NULL         a = 2 ;$       移入id       
+0             id            = 2 ;$       移入=
+0             id=             2 ;$       移入id
+016       id=id             ;$       按照F -> id 归约
+0316       id=F             ;$       按照T -> F 归约
+031612       id=T             ;$       按照E -> T 归约
+0316123       id=E             ;$       按照S -> id = E 归约
+0316123             S             ;$       移入;
+035             S;            ;$       按照S -> S ; S 归约
+0             S            ;$       接受
+
+
+
+分析第5行:  b = 1 ; 
+结果如下: 
+STACK        SYMBOL        INPUT        ACTION
+0             NULL         b = 1 ;$       移入id       
+0             id            = 1 ;$       移入=
+0             id=             1 ;$       移入id
+016       id=id             ;$       按照F -> id 归约
+0316       id=F             ;$       按照T -> F 归约
+031612       id=T             ;$       按照E -> T 归约
+0316123       id=E             ;$       按照S -> id = E 归约
+0316123             S             ;$       移入;
+035             S;            ;$       按照S -> S ; S 归约
+0             S            ;$       接受
+
+
+
+分析第6行:  if ( a > b ) 
+结果如下: 
+STACK        SYMBOL        INPUT        ACTION
+
+
+
+分析第7行:  c = a + b ; 
+结果如下: 
+STACK        SYMBOL        INPUT        ACTION
+
+
+
+分析第8行:  else 
+结果如下: 
+STACK        SYMBOL        INPUT        ACTION
+
+
+
+分析第9行:  c = a - b ; 
+结果如下: 
+STACK        SYMBOL        INPUT        ACTION
+
+
+
